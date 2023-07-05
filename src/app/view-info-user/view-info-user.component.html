@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="header">
+      <mat-icon class="close" mat-dialog-close>close</mat-icon>
+      <span class="">{{ "Dados do usuário" }}</span>
+    </div>
+  
+    <div class="divider"></div>
+  
+    <p class="form-header text-display-6">Confira os dados do usuário: {{data.user.first_name}}</p>
+
+    <p>First name: {{data.user.first_name}}</p>
+    <p>Second name: {{data.user.second_name}}</p>
+    <p>Email: {{data.user.contact_data.email}}</p>
+    <p>Phone number: {{data.user.contact_data.phone_number}}</p>
+    <p>Username: {{data.user.username}}</p>
+    <p>Document: {{data.user.document}}</p>
+    <p>Document type: {{data.user.document_type}}</p>
+    
+
+  
+    <div class="divider"></div>
+  
+    <div class="actions">
+      <button
+        mat-stroked-button
+        class="text-button"
+        color="primary"
+        mat-dialog-close
+      >
+        {{ "Entendi" }}
+      </button>
+    </div>
+  </div>
+  

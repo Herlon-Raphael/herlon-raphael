@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="header">
+    <mat-icon class="close" mat-dialog-close>close</mat-icon>
+    <span class="text-display-6">{{ "Add New User" }}</span>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="form-header">Digite as informações do usuário:</p>
+  <form [formGroup]="addUser" class="content">
+    <div class="user-name">
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>{{ "First name" }}</mat-label>
+        <input matInput type="text" formControlName="first_name" />
+        <mat-error
+          *ngIf="
+            addUser.get('first_name')?.invalid &&
+            addUser.get('first_name')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-50">
+        <mat-label>{{ "Second name" }}</mat-label>
+        <input matInput type="text" formControlName="second_name" />
+        <mat-error
+          *ngIf="
+            addUser.get('second_name')?.invalid &&
+            addUser.get('second_name')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <div class="form-field">
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>{{ "Email" }}</mat-label>
+        <input matInput type="text" formControlName="email" />
+        <mat-error
+          *ngIf="
+            addUser.get('email')?.invalid &&
+            addUser.get('email')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>{{ "Phone number" }}</mat-label>
+        <input matInput type="number" formControlName="phone_number" />
+        <mat-error
+          *ngIf="
+            addUser.get('phone_number')?.invalid &&
+            addUser.get('phone_number')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>{{ "Username" }}</mat-label>
+        <input matInput type="text" formControlName="username" />
+        <mat-error
+          *ngIf="
+            addUser.get('username')?.invalid &&
+            addUser.get('username')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>{{ "Document" }}</mat-label>
+        <input matInput type="number" formControlName="document" />
+        <mat-error
+          *ngIf="
+            addUser.get('document')?.invalid &&
+            addUser.get('document')?.touched
+          "
+          >{{ "Preenchimento obrigatório" }}</mat-error
+        >
+      </mat-form-field>
+
+    </div>
+  </form>
+
+  <div class="divider"></div>
+
+  <div class="actions">
+    <button
+      mat-stroked-button
+      class="text-button"
+      color="primary"
+      (click)="addNewUser()"
+    >
+      {{ "Adicionar usuário" }}
+    </button>
+  </div>
+</div>
